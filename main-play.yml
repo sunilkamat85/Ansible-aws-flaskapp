@@ -1,0 +1,14 @@
+---
+- name: provision ec2 instances
+  hosts: localhost
+  tasks:
+    - ec2:
+         key_name: ubuntu-lap
+         instance_type: t2.micro
+         image: ami-66506c1c
+         wait: yes
+         group: launch-wizard-4
+         count: 1
+         region: us-east-1
+         vpc_subnet_id: subnet-61704f3b
+         assign_public_ip: yes
